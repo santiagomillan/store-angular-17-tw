@@ -11,4 +11,9 @@ import { CommonModule } from '@angular/common';
 })
 export class ListComponent {
   imagenUrl = 'https://picsum.photos/640/640?r=' + Math.random();
+
+  fromChild(event: string) {
+    console.log('estamos en el padre');
+    console.log(event);
+  }
 }
