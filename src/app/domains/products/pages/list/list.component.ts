@@ -9,4 +9,6 @@ import { CommonModule } from '@angular/common';
   templateUrl: './list.component.html',
   styleUrl: './list.component.css',
 })
-export class ListComponent {}
+export class ListComponent {
+  imagenUrl = 'https://picsum.photos/640/640?r=' + Math.random();
+}
