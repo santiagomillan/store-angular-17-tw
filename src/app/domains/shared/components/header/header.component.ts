@@ -13,6 +13,10 @@ export class HeaderComponent {
   headerSideMenu = signal(true);
   @Input({ required: true }) cart: Product[] = [];
 
+  getTotalPrice() {
+    return this.cart.reduce((total, product) => total + product.price, 0);
+  }
+
   toogleSideMenu() {
     this.headerSideMenu.update((prevState) => !prevState);
   }
