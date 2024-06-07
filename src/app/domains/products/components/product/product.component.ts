@@ -15,9 +15,7 @@ export class ProductComponent {
 
   addToCarHandler() {
     console.log('click form child');
-    this.addToCar.emit(
-      'hola este es un msg desde el hijo' + this.product.title
-    );
+    this.addToCar.emit(this.product);
   }
 
   imagenUrl = 'https://picsum.photos/640/640?r=' + Math.random();

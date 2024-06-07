@@ -1,22 +1,10 @@
 <div class="container mx-auto">
-<app-header/>
+<app-header [cart]="cart()"/>
 <div class="grid grid-cols-4 gap-8 mt-5">
-  <!-- <app-product
-    [title]="'Producto 1'"
-    [price]="12"
-    [img]="'https://picsum.photos/640/640'"
-    (addToCar)="fromChild($event)"
-  /> -->
-  <!-- <app-product
-  [title]="product.title"
-  [price]="product.price"
-  [img]="product.image"
-  (addToCar)="fromChild($event)"
-/> -->
   @for (product of products(); track $index){
     <app-product
       [product]="product"
-      (addToCar)="fromChild($event)"
+      (addToCar)="addToCart($event)"
     />
 }
 
