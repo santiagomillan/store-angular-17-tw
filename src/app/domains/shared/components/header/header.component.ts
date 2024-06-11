@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, signal } from '@angular/core';
+import { Component, Input, SimpleChanges, signal } from '@angular/core';
 import { Product } from '../../models/product.model';
 
 @Component({
@@ -12,12 +12,20 @@ import { Product } from '../../models/product.model';
 export class HeaderComponent {
   headerSideMenu = signal(true);
   @Input({ required: true }) cart: Product[] = [];
-
-  getTotalPrice() {
-    return this.cart.reduce((total, product) => total + product.price, 0);
-  }
+  total = signal(0);
 
   toogleSideMenu() {
     this.headerSideMenu.update((prevState) => !prevState);
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    const cart = changes['cart'];
+    if (cart) {
+      this.total.set(this.getTotalPrice());
+    }
+  }
+
+  getTotalPrice() {
+    return this.cart.reduce((total, product) => total + product.price, 0);
   }
 }
