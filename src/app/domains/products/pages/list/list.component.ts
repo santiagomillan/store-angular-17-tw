@@ -7,7 +7,7 @@ import {
   signal,
 } from '@angular/core';
 import { ProductComponent } from '@products/components/product/product.component';
-import { CommonModule } from '@angular/common';
+
 import { Product } from '@shared/models/product.model';
 import { HeaderComponent } from '@shared/components/header/header.component';
 import { CartService } from '@shared/services/cart.service';
@@ -20,11 +20,10 @@ import { RouterLinkWithHref } from '@angular/router';
   selector: 'app-list',
   standalone: true,
   imports: [
-    CommonModule,
     ProductComponent,
     HeaderComponent,
-    RouterLinkWithHref,
-  ],
+    RouterLinkWithHref
+],
   templateUrl: './list.component.html',
   styleUrl: './list.component.css',
 })

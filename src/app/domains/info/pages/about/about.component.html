@@ -3,30 +3,31 @@
 <p><input type="text" [value]="message()" (change)="changeMessage($event)"></p> -->
 
 <!-- <div class="px-10">
-  <h1 class="text-lg font-bold">About</h1>
-  <p class="text-xs">This is a  <span highlight>simple example of a counter</span>  component that uses the Web Audio API to generate a sound wave.</p>
-  <p class="text-xs">Numero de clientes <app-counter  [duration]="duration()" [message]="message()" *ngIf="duration() > 0"/></p>
-  <div>
-    <app-wave-audio audioUrl="assets/audio.mp3"/>
-  </div>
+<h1 class="text-lg font-bold">About</h1>
+<p class="text-xs">This is a  <span highlight>simple example of a counter</span>  component that uses the Web Audio API to generate a sound wave.</p>
+<p class="text-xs">Numero de clientes <app-counter  [duration]="duration()" [message]="message()" *ngIf="duration() > 0"/></p>
+<div>
+  <app-wave-audio audioUrl="assets/audio.mp3"/>
+</div>
 
 </div> -->
 
-  <div >
-    <h1 class="text-lg font-bold">About</h1>
-    <p class="text-xs">
-      This is a <span highlight>simple example of a counter</span> component
-      that uses the Web Audio API to generate a sound wave.
-    </p>
-    <p class="text-xs">
-      Numero de clientes
+<div >
+  <h1 class="text-lg font-bold">About</h1>
+  <p class="text-xs">
+    This is a <span highlight>simple example of a counter</span> component
+    that uses the Web Audio API to generate a sound wave.
+  </p>
+  <p class="text-xs">
+    Numero de clientes
+    @if (duration() > 0) {
       <app-counter
         [duration]="duration()"
         [message]="message()"
-        *ngIf="duration() > 0"
-      />
-    </p>
-    <div>
-      <app-wave-audio audioUrl="assets/audio.mp3" />
-    </div>
+        />
+    }
+  </p>
+  <div>
+    <app-wave-audio audioUrl="assets/audio.mp3" />
   </div>
+</div>
